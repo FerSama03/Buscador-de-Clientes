@@ -52,7 +52,7 @@ if pedir_contrasena():
         conn = sqlite3.connect('clientes.db')
         
         query = """
-            SELECT DISTINCT ruc AS 'RUC / CI', razon_social AS 'Cliente / Razón Social', zona AS 'Zona'
+            SELECT DISTINCT ruc AS 'RUC / CI', razon_social AS 'Cliente', zona AS 'Zona', direccion AS 'Dirección'
             FROM clientes 
             WHERE ruc LIKE ? OR razon_social LIKE ?
         """
@@ -68,5 +68,4 @@ if pedir_contrasena():
         else:
             st.warning("No se encontraron clientes que coincidan con la búsqueda.")
     else:
-        st.info("Este  programa fue desarrollado para facilitar la búsqueda de clientes.")
         st.info("Creador: Futuro Ing. L.F")
