@@ -5,11 +5,17 @@ import pandas as pd
 # Configuración de la página
 st.set_page_config(page_title="Buscador de RUC y Clientes", page_icon="🔍", layout="wide")
 
+#interruptor de contraseña
+USAR_CONTRASEÑA = True  # Cambiar a False para desactivar la contraseña
+
 # Define aquí la contraseña para ingresar
-CONTRASEÑA_CORRECTA = "030607"  # 👈 Cambia "1234" por la clave que tú prefieras
+CONTRASEÑA_CORRECTA = "030607" 
 
 # --- FUNCIÓN DE CONTROL DE ACCESO ---
 def pedir_contrasena():
+    if not USAR_CONTRASEÑA:
+        return True  # No se requiere contraseña, permitir acceso
+    
     if "autenticado" not in st.session_state:
         st.session_state.autenticado = False
 
