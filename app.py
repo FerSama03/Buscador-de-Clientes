@@ -6,7 +6,7 @@ import pandas as pd
 st.set_page_config(page_title="Buscador de RUC y Clientes", page_icon="🔍", layout="wide")
 
 #interruptor de contraseña
-USAR_CONTRASEÑA = True  # Cambiar a False para desactivar la contraseña
+USAR_CONTRASEÑA = False  # Cambiar a False para desactivar la contraseña
 
 # Define aquí la contraseña para ingresar
 CONTRASEÑA_CORRECTA = "030607" 
